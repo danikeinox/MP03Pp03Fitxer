@@ -20,7 +20,7 @@
             <Label styleClass="title-label" text="INICI DE SESSIÓ ADMIN" />
             <TextField fx:id="nomUsuariTextField" prefHeight="50.0" prefWidth="200.0" promptText="Nom d'Usuari" />
             <PasswordField fx:id="contrasenyaPasswordField" prefHeight="50.0" prefWidth="200.0" promptText="Contrasenya" />
-            <Button onAction="#iniciarSessio" text="Iniciar Sessió" />
+            <Button fx:id="iniciarSessio" onAction="#iniciarSessio" text="Iniciar Sessió" />
             <padding>
                 <Insets bottom="20.0" left="50.0" right="20.0" top="20.0" />
             </padding>
@@ -39,7 +39,7 @@
             <PasswordField fx:id="contrasenyaNouUsuariPasswordField" prefHeight="50.0" prefWidth="200.0" promptText="Contrasenya" />
             <TextField fx:id="emailNouUsuariTextField" prefHeight="50.0" prefWidth="200.0" promptText="Correu electrònic" />
             <CheckBox fx:id="adminCheckBox" mnemonicParsing="false" text="Admin" />
-            <Button onAction="#crearUsuari" text="Crear Usuari" />
+            <Button fx:id="crearUsuariButton" onAction="#crearUsuari" text="Crear Usuari" />
             <Separator prefWidth="200.0" />
          <ImageView fx:id="imatgeCodiBarres" fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
             <TextField fx:id="codiBarresTextField" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" promptText="Codi de Barres" disable="true" />
