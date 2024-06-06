@@ -5,8 +5,15 @@ import com.google.zxing.common.BitMatrix;
 import java.awt.image.BufferedImage;
 
 public class MatrixToImageConverter {
+
+    // <editor-fold desc="Parametres">
+    // Constants
     private static final int BLACK = 0xFF000000;
     private static final int WHITE = 0xFFFFFFFF;
+
+    //</editor-fold>
+
+    // <editor-fold desc="Mètodes">
 
     public static BufferedImage toBufferedImage(BitMatrix matrix) {
         int width = matrix.getWidth();
@@ -22,4 +29,7 @@ public class MatrixToImageConverter {
 
         return image;
     }
+
+    //</editor-fold>
+
 }

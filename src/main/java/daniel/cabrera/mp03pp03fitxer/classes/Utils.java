@@ -18,6 +18,8 @@ import static daniel.cabrera.mp03pp03fitxer.Main.*;
 
 public class Utils {
 
+    // <editor-fold defaultstate="collapsed" desc="Mètodes">
+
     // Método para copiar el código de barras al portapapeles una vez creado el usuario
     public void copiaAlPortapapers(String codiBarra) {
         java.awt.datatransfer.Clipboard clipboard = java.awt.Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -213,4 +215,7 @@ public class Utils {
             Alerta("No s'ha pogut obrir la finestra: " + formulari, "Error", "ERROR_MESSAGE");
         }
     }
+
+    // </editor-fold>
+
 }

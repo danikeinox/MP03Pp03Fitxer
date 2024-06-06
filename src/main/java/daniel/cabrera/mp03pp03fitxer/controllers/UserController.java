@@ -16,6 +16,9 @@ import static daniel.cabrera.mp03pp03fitxer.Main.*;
 
 public class UserController {
 
+    // <editor-fold desc="Propietats">
+    // Declaraciones de los campos de la interfaz gráfica
+
     @FXML
     private TextField codiBarresTextField;
 
@@ -37,7 +40,15 @@ public class UserController {
     private final Fitxers f = new Fitxers();
     private final Utils utils = new Utils();
 
-    // Método para fichar la entrada o salida de un usuario y actualizar los datos en el archivo correspondiente
+    //</editor-fold>
+
+    // <editor-fold desc="Mètodes">
+
+    //** Método para fichar la entrada o salida de un usuario y actualizar los datos en el archivo correspondiente
+    //
+    //  @author daniel.cabrera
+    //  @throws IOException
+    //  @throws ClassNotFoundException
     @FXML
     public void fitxar() throws IOException, ClassNotFoundException {
         String codiBarres = codiBarresTextField.getText();
@@ -105,9 +116,13 @@ public class UserController {
         dataHoraLabel.setText("");
     }
 
-    // Método para abrir el formulario de login de administrador
+    //** Método para abrir el formulario de login de administrador
+    //
+    //  @author daniel.cabrera
     @FXML
     public void obrirAdminLogin() {
         utils.FGeneric("formularis/admin.fxml", "Login d'administrador");
     }
+
+    //</editor-fold>
 }

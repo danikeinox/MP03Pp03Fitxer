@@ -9,8 +9,15 @@ import java.awt.image.BufferedImage;
 import java.util.Random;
 
 public class GenerateEAN13Barcode {
+
+    // <editor-fold defaultstate="collapsed" desc="Variables">
+    // Constants
     private static final int BARCODE_HEIGHT = 100;
     private static final int BARCODE_WIDTH = 200;
+
+    //</editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Mètodes">
 
     public static BufferedImage generateEAN13BarcodeImage(String barcodeText) throws WriterException {
         EAN13Writer barcodeWriter = new EAN13Writer();
@@ -53,4 +60,7 @@ public class GenerateEAN13Barcode {
 
         return String.valueOf(checkDigit);
     }
+
+    //</editor-fold>
+
 }
