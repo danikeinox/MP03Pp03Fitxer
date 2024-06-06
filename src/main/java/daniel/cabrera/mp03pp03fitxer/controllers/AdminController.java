@@ -26,9 +26,14 @@ import static daniel.cabrera.mp03pp03fitxer.Main.nomDir;
 
 public class AdminController {
 
+    // <editor-fold defaultstate="collapsed" desc="Variables">
+    // Declaracions de variables
+
     private static Utils utils = new Utils();
 
     private Fitxers f;
+
+    private static String nomUsuari;
 
     @FXML
     private VBox VBoxIniciSessio;
@@ -73,9 +78,28 @@ public class AdminController {
     @FXML
     private CheckBox adminCheckBox;
 
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Getters i setters">
+
+    public static String getNomUsuari() {
+        return nomUsuari;
+    }
+
+    public static void setNomUsuari(String nomUsuari) {
+        AdminController.nomUsuari = nomUsuari;
+    }
+
+    // </editor-fold>
 
 
-    // Mètode per inicialitzar la finestra de l'aplicació i comprovar si hi ha un usuari admin a la base de dades
+    // <editor-fold defaultstate="collapsed" desc="Mètodes">
+
+
+    /** Mètode per inicialitzar la finestra de l'aplicació i comprovar si hi ha un usuari admin a la base de dades
+     *
+     * @autor daniel.cabrera
+     */
     @FXML
     public void initialize() {
         Fitxers f = new Fitxers();
@@ -91,7 +115,12 @@ public class AdminController {
         }
     }
 
-    // Mètode per crear un nou usuari
+    /** Mètode per crear un nou usuari
+     *
+     * @autor daniel.cabrera
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     @FXML
     public void crearUsuari() throws IOException, ClassNotFoundException {
         Fitxers f = new Fitxers();
@@ -185,7 +214,13 @@ public class AdminController {
         netejarCamps();
     }
 
-    // Mètode per iniciar sessió com a administrador de l'aplicació
+
+    /** Mètode per iniciar sessió com a administrador de l'aplicació
+     *
+     * @autor daniel.cabrera
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     @FXML
     public void iniciarSessio() throws IOException, ClassNotFoundException {
         // Connectar a la base de dades i comprovar l'inici de sessió
@@ -197,6 +232,7 @@ public class AdminController {
             // Habilitar la secció de creació d'usuari si l'inici de sessió és correcte
             VBoxCrear.setDisable(false); // Habilitar la secció de creació d'usuari
             VBoxIniciSessio.setDisable(true); // Desactivar la secció d'inici de sessió
+            setNomUsuari(usuari);
         } else {
             // Si és incorrecte, mostrar un missatge d'error i no habilitar la secció de creació d'usuari
             Utils utils = new Utils();
@@ -205,7 +241,11 @@ public class AdminController {
         // Tancar la connexió amb la base de dades
     }
 
-    // Mètode per netejar els camps d'entrada després de crear un usuari
+
+    /** Mètode per netejar els camps d'entrada després de crear un usuari
+     *
+     * @autor daniel.cabrera
+     */
     private void netejarCamps() {
         usuariNouUsuariTextField.clear();
         nomNouUsuariTextField.clear();
@@ -216,11 +256,17 @@ public class AdminController {
         adminCheckBox.setSelected(false); // Desmarcar la casella d'admin
     }
 
-    // Mètode per obrir el panell d'usuari des de l'aplicació d'administrador
+
+    /** Mètode per obrir el panell d'usuari des de l'aplicació d'administrador
+     *
+     * @autor daniel.cabrera
+     */
     @FXML
     public void obrirPanellUsuari() {
         // Obrir el panell d'usuari
         utils.FGeneric("formularis/user.fxml", "Control de Presència");
     }
+
+    // </editor-fold>
 
 }

@@ -21,7 +21,7 @@
                 <TextField fx:id="codiBarresTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="70.0"
                            prefWidth="250.0" promptText="Escanejar codi de barres"
                            style="-fx-background-color: #DBB1B1;"/>
-                <Button onAction="#fitxar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="49.0"
+                <Button fx:id="fitxarButton" onAction="#fitxar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="49.0"
                         prefWidth="139.0" style="-fx-background-color: #008287;" text="ESCANEJAR" textAlignment="CENTER"
                         textFill="WHITE"/>
             </VBox>

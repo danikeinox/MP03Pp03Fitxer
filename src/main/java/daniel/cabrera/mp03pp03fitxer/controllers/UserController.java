@@ -16,6 +16,9 @@ import static daniel.cabrera.mp03pp03fitxer.Main.*;
 
 public class UserController {
 
+    // <editor-fold desc="Propietats">
+    // Declaraciones de los campos de la interfaz gráfica
+
     @FXML
     private TextField codiBarresTextField;
 
@@ -37,7 +40,17 @@ public class UserController {
     private final Fitxers f = new Fitxers();
     private final Utils utils = new Utils();
 
-    // Método para fichar la entrada o salida de un usuario y actualizar los datos en el archivo correspondiente
+    //</editor-fold>
+
+    // <editor-fold desc="Mètodes">
+
+
+    /** Método para fichar la entrada o salida de un usuario y actualizar los datos en el archivo correspondiente
+     *
+     * @autor daniel.cabrera
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     @FXML
     public void fitxar() throws IOException, ClassNotFoundException {
         String codiBarres = codiBarresTextField.getText();
@@ -58,7 +71,15 @@ public class UserController {
         }
     }
 
-    // Método para verificar y actualizar la entrada o salida de un usuario
+    /** Método para verificar y actualizar la entrada o salida de un usuario
+     *
+     * @autor daniel.cabrera
+     * @param ruta
+     * @param codiBarres
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     private boolean verificarYActualizarUsuario(String ruta, String codiBarres) throws IOException, ClassNotFoundException {
         if (f.existeix(ruta)) {
             List<User> usuaris = utils.llegeixFitxerBinariComUser(ruta);
@@ -80,7 +101,12 @@ public class UserController {
         return false;
     }
 
-    // Método para actualizar los datos del usuario en el formulario FXML
+
+    /** Método para actualizar los datos del usuario en el formulario FXML
+     *
+     * @autor daniel.cabrera
+     * @param user
+     */
     private void actualizarDatosUsuario(User user) {
         boolean entradaSortida = user.isEntrada();
         usuariLabel.setText(user.getUsuari());
@@ -96,7 +122,11 @@ public class UserController {
         user.setDataHora(dataHoraFormatejada);
     }
 
-    // Método para limpiar las etiquetas del formulario FXML
+
+    /** Método para limpiar las etiquetas del formulario FXML
+     *
+     * @autor daniel.cabrera
+     */
     private void limpiarEtiquetas() {
         usuariLabel.setText("");
         nomLabel.setText("");
@@ -105,9 +135,15 @@ public class UserController {
         dataHoraLabel.setText("");
     }
 
-    // Método para abrir el formulario de login de administrador
+
+    /** Método para abrir el formulario de login de administrador
+     *
+     * @autor daniel.cabrera
+     */
     @FXML
     public void obrirAdminLogin() {
         utils.FGeneric("formularis/admin.fxml", "Login d'administrador");
     }
+
+    //</editor-fold>
 }

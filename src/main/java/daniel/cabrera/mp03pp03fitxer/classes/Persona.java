@@ -3,6 +3,8 @@ package daniel.cabrera.mp03pp03fitxer.classes;
 import java.io.Serializable;
 
 public abstract class Persona implements Serializable {
+
+    // <editor-fold desc="Propietats">
     private String nom;
     private String cognoms;
     private String codiBarra;
@@ -13,6 +15,10 @@ public abstract class Persona implements Serializable {
     private boolean admin;
     private boolean entrada;
     private String dataHora;
+
+    //</editor-fold>
+
+    // <editor-fold desc="Constructors">
 
     // No-argument constructor
     public Persona() {
@@ -32,6 +38,10 @@ public abstract class Persona implements Serializable {
         this.entrada = entrada;
         this.dataHora = dataHora;
     }
+
+    //</editor-fold>
+
+    // <editor-fold desc="Getters i setters">
 
     // Getters i setters
 
@@ -114,4 +124,6 @@ public abstract class Persona implements Serializable {
     public void setDataHora(String dataHora) {
         this.dataHora = dataHora;
     }
+
+    //</editor-fold>
 }

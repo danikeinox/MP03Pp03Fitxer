@@ -9,9 +9,15 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    // <editor-fold defaultstate="collapsed" desc="Variables">
+    // Declaración de variables
     public static String nomDir = ".data";
     public static String rutaAdmin = "administradors.dat";
     public static String rutaUsuari = "usuaris.dat";
+
+    //</editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Mètodes">
 
     // Inicialización de la aplicación y comprobación de la existencia de un administrador
     @Override
@@ -35,7 +41,11 @@ public class Main extends Application {
         }
     }
 
+    // Método principal de la aplicación
     public static void main(String[] args) {
         launch(args);
     }
+
+    //</editor-fold>
+
 }
