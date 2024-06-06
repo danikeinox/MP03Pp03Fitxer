@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="daniel.cabrera.mp03pp03fitxer.controllers.UserController">
+    <center>
+        <SplitPane dividerPositions="0.5">
+            <!-- Panell esquerre: Lector de codis de barres -->
+            <VBox alignment="CENTER" spacing="20">
+                <Label styleClass="title-label" text="Lector de Codi de Barres" wrapText="true"/>
+                <TextField fx:id="codiBarresTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="70.0"
+                           prefWidth="250.0" promptText="Escanejar codi de barres"
+                           style="-fx-background-color: #DBB1B1;"/>
+                <Button onAction="#fitxar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="49.0"
+                        prefWidth="139.0" style="-fx-background-color: #008287;" text="ESCANEJAR" textAlignment="CENTER"
+                        textFill="WHITE"/>
+            </VBox>
+            <!-- Panell dret: Mostra de dades -->
+            <VBox alignment="CENTER" disable="true" spacing="20">
+                <Label alignment="CENTER" contentDisplay="CENTER" styleClass="title-label" text="Dades del Treballador"
+                       textAlignment="CENTER"/>
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Usuari: "/>
+                <Label fx:id="usuariLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity"
+                       minWidth="-Infinity" prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: #DBB1B1;"/>
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Nom: "/>
+                <Label fx:id="nomLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity"
+                       minWidth="-Infinity" prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: #DBB1B1;"/>
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Cognom: "/>
+                <Label fx:id="cognomsLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="200.0"
+                       style="-fx-background-color: #DBB1B1;"/>
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Entrada/Sortida: "/>
+                <Label fx:id="entradaSortidaLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="200.0"
+                       style="-fx-background-color: #DBB1B1;"/>
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Data:"/>
+                <Label fx:id="dataHoraLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="200.0"
+                       style="-fx-background-color: #DBB1B1;"/>
+            </VBox>
+        </SplitPane>
+    </center>
+    <top>
+        <MenuBar nodeOrientation="RIGHT_TO_LEFT" BorderPane.alignment="TOP_CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Config">
+                    <items>
+                        <MenuItem onAction="#obrirAdminLogin" mnemonicParsing="false" text="Inici de sessió (admin)"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+</BorderPane>
