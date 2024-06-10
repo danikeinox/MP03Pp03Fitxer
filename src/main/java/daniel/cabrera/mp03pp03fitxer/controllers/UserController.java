@@ -82,7 +82,7 @@ public class UserController {
      */
     private boolean verificarYActualizarUsuario(String ruta, String codiBarres) throws IOException, ClassNotFoundException {
         if (f.existeix(ruta)) {
-            List<User> usuaris = utils.llegeixFitxerBinariComUser(ruta);
+            List<User> usuaris = (List<User>) f.retornaFitxerObjecteEnLlista(ruta, List.class);
             if (usuaris != null) {
                 for (User user : usuaris) {
                     if (user != null && user.getCodiBarra().equals(codiBarres)) {

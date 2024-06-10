@@ -35,7 +35,7 @@ javafx {
 }
 
 dependencies {
-    implementation files('src/lib/daniel/Cabrera/Fitxers/Fitxers-3.0.jar')
+    implementation files('src/lib/daniel/Cabrera/Fitxers/Fitxers-3.0.1.jar')
     implementation 'org.mindrot:jbcrypt:0.4'
     implementation 'com.google.zxing:core:3.5.3'
     implementation 'io.github.cdimascio:dotenv-java:2.2.0'

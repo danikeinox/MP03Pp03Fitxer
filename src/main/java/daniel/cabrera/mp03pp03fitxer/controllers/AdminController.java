@@ -159,7 +159,7 @@ public class AdminController {
             }
         } else if (f.existeix(nomDir + "/" + rutaUsuari)) {
             fitxersExisteixen++;
-            usuaris = utils.llegeixObjectesFitxer(nomDir + "/" + rutaUsuari);
+             usuaris = (List<User>) f.retornaFitxerObjecteEnLlista(nomDir + "/" + rutaAdmin, List.class);
             if (usuaris == null) {
                 usuaris = new ArrayList<>();
             }

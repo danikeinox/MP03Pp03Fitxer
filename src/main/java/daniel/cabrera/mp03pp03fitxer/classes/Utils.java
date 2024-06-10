@@ -12,6 +12,7 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static daniel.cabrera.mp03pp03fitxer.Main.*;
@@ -44,7 +45,7 @@ public class Utils {
         }
         Fitxers f = new Fitxers();
         if (f.existeix(nomDir + "/" + rutaAdmin)) {
-            List<User> admins = llegeixFitxerBinariComUser(nomDir + "/" + rutaAdmin);
+            List<User> admins = (List<User>) f.retornaFitxerObjecteEnLlista(nomDir + "/" + rutaAdmin, List.class);
             if (admins != null) {
                 for (User admin : admins) {
                     if (admin != null) {

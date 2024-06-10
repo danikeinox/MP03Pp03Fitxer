@@ -1,5 +1,6 @@
 package daniel.cabrera.mp03pp03fitxer.controllers;
 
+import daniel.Cabrera.Fitxers.Fitxers;
 import daniel.cabrera.mp03pp03fitxer.classes.User;
 import daniel.cabrera.mp03pp03fitxer.classes.Utils;
 import daniel.cabrera.mp03pp03fitxer.controllers.AdminController;
@@ -19,6 +20,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static daniel.cabrera.mp03pp03fitxer.Main.nomDir;
+import static daniel.cabrera.mp03pp03fitxer.Main.rutaAdmin;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AdminControllerTest extends ApplicationTest {
@@ -38,7 +41,7 @@ public class AdminControllerTest extends ApplicationTest {
     }
 
     @Test
-    public void testCrearUsuari() throws IOException, UnsupportedFlavorException {
+    public void testCrearUsuari() throws IOException, UnsupportedFlavorException, ClassNotFoundException {
         // Aquí debes escribir el texto en los campos de entrada necesarios para el método
         // Por ejemplo, si el método necesita un nombre de usuario y una contraseña, debes proporcionarlos
         clickOn("#usuariNouUsuariTextField").write("testUser");
@@ -65,7 +68,8 @@ public class AdminControllerTest extends ApplicationTest {
         // verificar que el usuario se ha creado correctamente comprobando el código de barras
 
         Utils utils = new Utils();
-        List<User> usuaris = utils.llegeixFitxerBinariComUser(".data/administradors.dat");
+        Fitxers f = new Fitxers();
+        List<User> usuaris = (List<User>) f.retornaFitxerObjecteEnLlista(nomDir + "/" + rutaAdmin, List.class);
         User usuariTest = null;
         if (usuaris == null) {
             usuaris = new ArrayList<>();
